@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
+content %}
+    <section class="get-in-touch">
+        <h1 class="title">Sign Up</h1>
+        <form class="contact-form row" method="POST">
+            <div class="form-field col-lg-6">
+                <input id="fullname" name="fullname" class="input-text js-input" type="text" required>
+                <label class="label" for="fullname">Full Name</label>
+            </div>
+            <div class="form-field col-lg-6 ">
+                <input id="email" name="email" class="input-text js-input" type="email" required>
+                <label class="label" for="email">E-mail Address</label>
+            </div>
+            <div class="form-field col-lg-6 ">
+                <input id="password1" name="password1" class="input-text js-input" type="password" required>
+                <label class="label" for="password1">Password</label>
+            </div>
+            <div class="form-field col-lg-6 ">
+                <input id="password2" name="password2" class="input-text js-input" type="password" required>
+                <label class="label" for="password2">Password (Confirm)</label>
+            </div>
+            <div class="form-field col-lg-6">
+                <input class="submit-btn" type="submit" value="Submit">
+            </div>
+            <div class="form-field col-lg-6" style="padding-top: 0.4em;">
+                <span>Already have an account?</span> <a href="/login">Login Here!</a>
+            </div>
+        </form>
+    </section>
+{% endblock %}

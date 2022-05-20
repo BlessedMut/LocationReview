@@ -1,0 +1,108 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content %}
+    <div class="row" style="margin-top: 2em;">
+        <div class="col">
+
+        </div>
+        <div class="col-6">
+            <div class="wrap-login100">
+                <span class="search-form-title">
+						Search IP-Address
+					</span>
+                <form method="POST" class="form-inline">
+                    <div class="form-group mb-2" style="padding-left: 6.8em;">
+                        <label class="label" for="ip">IP ADDRESS</label>
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="ip" class="sr-only"></label>
+                        <input type="text" class="form-control" id="ip" name="ip">
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary btn-block mb-2">Trace IP</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col">
+
+        </div>
+    </div>
+    <br>
+
+
+    <div class="row mt-100">
+        <div class="col">
+
+        </div>
+        <div class="col-10">
+            {{ search }}
+            <table>
+                <tr>
+                    {% for col in column_names %}
+                        <th>{{ col }}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in row_data %}
+                    <tr>
+                        {% for col, row_ in zip(column_names, row) %}
+                            {% if col == link_column %}
+                                <td>
+                                    {{ row_ }}
+                                </td>
+                            {% else %}
+                                <td>{{ row_ }}</td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+        <hr/>
+        <div class="col">
+
+        </div>
+    </div><br/>
+
+
+    <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col-10">
+            Top 7 Searched Ip Addresses
+
+            <table>
+                <tr>
+                    {% for col in pop_columns %}
+                        <th>{{ col }}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in pop_rows %}
+                    <tr>
+                        {% for col, row_ in zip(pop_columns, row) %}
+                            {% if col == link_column %}
+                                <td>
+                                    {{ row_ }}
+                                </td>
+                            {% else %}
+                                <td>{{ row_ }}</td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+        <div class="col">
+            <div class="row">
+                <p style="font-size:70%;">Most Searched Country</p>
+            </div>
+            <div class="row">
+                <p style="font-size: 70%; align-content: last;"><strong>{{ most_searched }}</strong></p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+

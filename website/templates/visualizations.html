@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block title %}Visualizations{% endblock %} {% block content %}
+    <div class="row" style="margin-bottom: 10em;">
+        <div class="col">
+
+        </div>
+
+        <div class="col-10">
+            <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+            <hr/>
+            <p>Countries by their Search Frequency</p>
+            <hr/>
+            <div class="chart" id="pie">
+                <script>
+                    var graphs = {{plot | safe}};
+                    Plotly.plot('pie', graphs, {});
+                </script>
+            </div>
+            <hr/>
+            <p>IP Distributions over regions of different countries</p>
+            <hr/>
+            <div class="chart" id="heatmap">
+                <script>
+                    var graphs = {{heatmap_plot | safe}};
+                    Plotly.plot('heatmap', graphs, {});
+                </script>
+            </div>
+
+        </div>
+
+        <div class="col">
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block plotly_scripts %}
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+
+{% endblock plotly_scripts %}

@@ -1,6 +1,8 @@
 import json
 
 import pandas as pd
+import plotly
+import plotly.graph_objs as go
 import requests
 from flask import Blueprint, render_template, request
 from flask_login import login_required, current_user
@@ -53,7 +55,7 @@ def table_data_filter():
     table_dataframe = table_dataframe.loc[table_dataframe['user_email'] == str(current_user.email)]
     table_dataframe = table_dataframe[[
         'ip', 'continent', 'country', 'country_code', 'region', 'region_code', 'city', 'search_frequency']]
-    table_dataframe = table_dataframe.sort_values('search_frequency', ascending=False).head(7)
+    table_dataframe = table_dataframe.sort_values('search_frequency', ascending=False)
     return table_dataframe
 
 
@@ -121,9 +123,40 @@ def home():
     return render_template("home.html", user=current_user)
 
 
-@views.route('/test', methods=['GET', 'POST'])
+def create_pie_chart():
+    email_data = IPAddresses.objects.order_by('user_email')
+
+    labels, values = [], []
+
+    for rec in email_data:
+        labels.append(rec.country)
+        values.append(rec.search_frequency)
+    data = [go.Pie(labels=labels, values=values)]
+
+    graphJSON = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+
+
+def create_heatmap():
+    # email_data = IPAddresses.objects.order_by('user_email')
+
+    data = table_data_filter()
+    grp = data.groupby(['region', 'country'])['region_code'].count()
+    grp_data = grp.to_frame().reset_index()
+    region = grp_data['region'].to_list()
+    country = grp_data['country'].to_list()
+    code = list(zip(region, country))
+    reg_code_count = grp_data['region_code'].to_list()
+
+    data = [go.Heatmap(z=[reg_code_count], x=region, text=[country])]
+
+    graphJSON = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
+    return graphJSON
+
+
+@views.route('/visualizations', methods=['GET', 'POST'])
 @login_required
-def test():
-    ip = request.form.get('ip')
-    print(ip)
-    return render_template('test.html', user=current_user, ip_add=ip)
+def visualizations():
+    pie = create_pie_chart()
+    heatmap = create_heatmap()
+    return render_template('visualizations.html', user=current_user, plot=pie, heatmap_plot=heatmap)

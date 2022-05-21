@@ -75,7 +75,21 @@
     </div>
 {% endif %} {% endfor %} {% endif %} {% endwith %}
 
-<div class="container-fluid">{% block content %} {% endblock %}</div>
+<div class="container-fluid">
+    {% block content %}
+    {% endblock %}
+    <footer class="page-footer font-small bg-dark pt-3 fixed-bottom">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-0.5"><p style="color: #dddddd;">© 2022 Copyright:<a
+                href="https://www.linkedin.com/in/blessed-mutengwa-301010164/"> Designed by Blessed Mutengwa</a></p>
+        </div>
+        <!-- Copyright -->
+    </footer>
+</div>
+
+{% block plotly_scripts %}
+{% endblock plotly_scripts %}
+
 <script
         src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

@@ -41,10 +41,11 @@
                 <a class="nav-item nav-link" id="documentation" href="/visualizations">Visualizations</a>
             {% else %}
                 <a class="nav-item nav-link" id="login" href="/login">Login</a>
-                <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+                <a class="nav-item nav-link" id="sign-up" href="/sign-up">Sign Up</a>
             {% endif %}
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            {% if user.is_authenticated %}
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="/documentation">Documentation</a>
@@ -53,6 +54,7 @@
                     <a class="nav-link" href="/logout">Logout</a>
                 </li>
             </ul>
+          {% endif %}
         </div>
     </div>
 </nav>

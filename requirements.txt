@@ -1,49 +1,49 @@
-bcrypt @ file:///C:/ci/bcrypt_1597936263757/work
-Bottleneck @ file:///C:/ci/bottleneck_1648029103672/work
+bcrypt
+Bottleneck
 brotlipy==0.7.0
 certifi==2021.10.8
-cffi @ file:///C:/ci_310/cffi_1642682485096/work
-charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+cffi
+charset-normalizer
 chart-studio==1.1.0
-click @ file:///C:/ci/click_1646056799533/work
-colorama @ file:///tmp/build/80754af9/colorama_1607707115595/work
-cryptography @ file:///C:/ci/cryptography_1652101772384/work
+click
+colorama
+cryptography
 dnspython==2.2.1
 email-validator==1.2.1
-Flask @ file:///opt/conda/conda-bld/flask_1648041541647/work
-Flask-Login @ file:///Users/ktietz/demo/mc3/conda-bld/flask-login_1629875349535/work
+Flask
+Flask-Login
 flask-mongoengine==1.0.0
-Flask-SQLAlchemy @ file:///tmp/build/80754af9/flask-sqlalchemy_1616180561581/work
+Flask-SQLAlchemy
 Flask-WTF==1.0.1
-greenlet @ file:///C:/ci/greenlet_1628888262822/work
+greenlet
 gunicorn==20.1.0
-idna @ file:///tmp/build/80754af9/idna_1637925883363/work
-itsdangerous @ file:///tmp/build/80754af9/itsdangerous_1621432558163/work
-Jinja2 @ file:///opt/conda/conda-bld/jinja2_1647436528585/work
-MarkupSafe @ file:///C:/ci/markupsafe_1621528314575/work
+idna
+itsdangerous
+Jinja2
+MarkupSafe
 mkl-fft==1.3.1
-mkl-random @ file:///C:/ci/mkl_random_1626186184278/work
+mkl-random
 mkl-service==2.4.0
 mongoengine==0.24.1
-numexpr @ file:///C:/ci/numexpr_1640704408721/work
-numpy @ file:///C:/ci/numpy_and_numpy_base_1652802206636/work
-packaging @ file:///tmp/build/80754af9/packaging_1637314298585/work
-pandas @ file:///C:/ci/pandas_1650373491186/work
+numexpr
+numpy
+packaging
+pandas
 plotly==5.8.0
-pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pycparser
 pymongo==3.12.0
-pyOpenSSL @ file:///opt/conda/conda-bld/pyopenssl_1643788558760/work
-pyparsing @ file:///tmp/build/80754af9/pyparsing_1635766073266/work
-PySocks @ file:///C:/ci/pysocks_1605287845585/work
-python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
+pyOpenSSL
+pyparsing
+PySocks
+python-dateutil
 pytz==2021.3
-requests @ file:///opt/conda/conda-bld/requests_1641824580448/work
+requests
 retrying==1.3.3
-six @ file:///tmp/build/80754af9/six_1644875935023/work
-SQLAlchemy @ file:///C:/ci/sqlalchemy_1647600010916/work
+six
+SQLAlchemy
 tenacity==8.0.1
-urllib3 @ file:///C:/ci/urllib3_1650640043075/work
-Werkzeug @ file:///opt/conda/conda-bld/werkzeug_1645628268370/work
-win-inet-pton @ file:///C:/ci/win_inet_pton_1605306167264/work
+urllib3
+Werkzeug
+win-inet-pton
 wincertstore==0.2
 WTForms==3.0.1

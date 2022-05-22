@@ -21,9 +21,6 @@ idna
 itsdangerous
 Jinja2
 MarkupSafe
-mkl-fft
-mkl-random
-mkl-service==2.4.0
 mongoengine==0.24.1
 numexpr
 numpy

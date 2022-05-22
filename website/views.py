@@ -65,6 +65,7 @@ def table_data_filter():
 def home():
     if request.method == 'GET':
         table_dataframe = table_data_filter()
+        table_dataframe = table_dataframe.head(7)
         try:
             most_searched_country = table_dataframe.groupby('country')
             m_s_c = most_searched_country['search_frequency'].max()
@@ -89,6 +90,7 @@ def home():
             filtered_data = fetch_ip_data(ip_req=ip_req)[1]
 
             table_dataframe = table_data_filter()
+            table_dataframe = table_dataframe.head(7)
 
             check_ip = IPAddresses.objects(ip=ip_address).first()
             email_data = IPAddresses.objects.order_by('user_email')

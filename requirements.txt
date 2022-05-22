@@ -7,3 +7,4 @@ requests~=2.27.1
 flask-login
 flask-mongoengine
 requests
+gunicorn

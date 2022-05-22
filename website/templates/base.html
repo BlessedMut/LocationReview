@@ -38,7 +38,7 @@
         <div class="navbar-nav">
             {% if user.is_authenticated %}
                 <a class="nav-item nav-link" id="home" href="/">Home</a>
-                <a class="nav-item nav-link" id="documentation" href="/visualizations">Visualizations</a>
+                <a class="nav-item nav-link" id="visualizations" href="/visualizations">Visualizations</a>
             {% else %}
                 <a class="nav-item nav-link" id="login" href="/login">Login</a>
                 <a class="nav-item nav-link" id="sign-up" href="/sign-up">Register</a>
@@ -46,15 +46,19 @@
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             {% if user.is_authenticated %}
-            <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/BlessedMut/LocationReview/blob/master/README.md">Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="/documentation">Documentation</a>
+                    <a class="nav-link" href="https://github.com/BlessedMut/LocationReview/blob/master/README.md">Documentation</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/logout">Logout</a>
-                </li>
-            </ul>
-          {% endif %}
+            {% endif %}
         </div>
     </div>
 </nav>
